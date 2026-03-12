@@ -5,6 +5,7 @@
 int main() {
     double a, b;
     int choice;
+    std::string line;
 
     while (true){
     std::cout << "\nPodaj pierwsza liczbe:\n ";
@@ -16,6 +17,8 @@ int main() {
         continue;
     }
 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     std::cout << "Podaj druga liczbe:\n ";
     if (!(std::cin >> b)) {
         std::cout << "Blad danych\n";
@@ -25,6 +28,7 @@ int main() {
 
         continue;
     }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << "1. Dodaj\n";
     std::cout << "2. Odejmij\n";
@@ -64,8 +68,19 @@ int main() {
 
             continue;
     }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+        do {
+            std::cout << "\nNacisnij ENTER aby kontynuowac...";
+            std::getline(std::cin, line);
 
+            if (!line.empty()) {
+                std::cout << "Zostaw puste pole i wcisnij ENTER\n";
+            }
+        }
+        while (!line.empty());
+
+        system("clear");
 
     }
 }
