@@ -1,1 +1,1 @@
-# calculator
+# Calculator made for fun
